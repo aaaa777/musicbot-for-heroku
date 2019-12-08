@@ -6,7 +6,7 @@ require 'net/https'
 require 'open-uri'
 
 A7ID = 238575590456688641
-bot = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'], client_id: 374072997729796109, name: 'test_bot', prefix: '!', help_command: :hep
+bot = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'], prefix: '!', help_command: :hep
 
 bot.ready do |e|
   #youtube_url = "https://www.youtube.com/watch?v=Jo1tjBmwuXI"
