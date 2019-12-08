@@ -1,4 +1,4 @@
-#require './defs'
+
 require 'discordrb'
 require 'open3'
 #require 'pg'
@@ -20,13 +20,6 @@ bot.ready do |e|
   #puts `./bin/plowup zippyshare video.mp4`
 end
 
-#bot.command(:new) do |e, *args|
-#  uri = URI.parse(ENV['DATABASE_URL'])
-#  connection = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)
-#  connection.exec('drop table if exists music')
-#  connection.close
-#end
-
 bot.command(:con) do |e|
   vcch = e.user.voice_channel
   bot.voice_connect(vcch)
@@ -40,7 +33,7 @@ end
 
 bot.command(:play) do |e, *args|
   voice_bot = bot.voices[e.server.id]
-  return 'you aren\'t in voice ch' unless voice_bot
+  return 'not in voice ch. type `!con` first.' unless voice_bot
 
   url = args.first
   
